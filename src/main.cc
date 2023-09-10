@@ -35,6 +35,8 @@ This file is part of the QGROUNDCONTROL project
 #include "logging.h"
 
 #include <fstream>
+#include <iostream>
+
 #include <QApplication>
 #include <QMutexLocker>
 
@@ -109,6 +111,8 @@ int main(int argc, char *argv[])
     // MUST be called before construction of QApplication - in our case QGCCore.
     QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
 #endif
+
+    QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     // Init application
     QGCCore core(argc, argv);
